@@ -6,6 +6,7 @@ const client = redis.createClient({
  port: 6379
 
 });
+client.set('visitsCounter', 0);
 app.get('/', (req,res) => {
     client.get('visitsCounter', (err,visitsCounter) =>
     {
@@ -13,6 +14,6 @@ app.get('/', (req,res) => {
         client.set('visitsCounter', parseInt(visitsCounter) +1);
     })
 } )
-app.listen(8080, () => {
-    console.log('listening on port 8081');
+app.listen(3000, () => {
+    console.log('listening on port 3000');
 })

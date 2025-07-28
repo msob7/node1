@@ -3,6 +3,6 @@ services:
   redis:
    image: "redis"
   node:
-   build: =
+   build: .
    ports: 
-     - "8081:8081"
+     - "3000:3000"
